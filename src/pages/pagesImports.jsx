@@ -1,0 +1,11 @@
+export { default as Alliance } from './Alliance';
+export { default as Home} from './Home';
+export { default as Inventory } from './Inventory';
+export { default as LeaderBoard } from './LeaderBoard';
+export { default as LoginPage } from './LoginPage';
+export { default as MarsGames } from './MarsGames';
+export { default as Settings } from './Settings';
+export { default as Statistics } from './Statistics';
+export { default as Shop } from './Shop';
+export { default as NotFound } from './NotFound';
+export { default as RegistrationPage } from './RegistrationPage';
