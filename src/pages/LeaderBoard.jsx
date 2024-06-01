@@ -136,7 +136,7 @@ const LeaderBoard = () => {
                 </div>
               )}
 
-              <div className='flex justify-start max-w-[80%] mx-auto'>
+              <div className='flex justify-start max-w-[80%] mx-auto flex-col items-start gap-10'>
 
                 <div className="join">
                   <button className="join-item btn">All Gamers</button>
@@ -145,7 +145,7 @@ const LeaderBoard = () => {
                   <button className="join-item btn">DESIGN</button>
                 </div>
 
-                <LeaderboardTable />
+                <LeaderboardTable data={users} />
               </div>
             </div>
 
