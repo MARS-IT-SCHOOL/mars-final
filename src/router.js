@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         element: <NotFound />,
     },
     {
-        path: "typing",
+        path: "/typing",
         element: <Typing />
 
     },

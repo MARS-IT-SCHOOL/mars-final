@@ -68,7 +68,7 @@ const Statistics = ({ userData }) => {
                   </div>
                 </div>
               </div>
-              <p className="text-warning">
+              <p className="text-warning flex gap-2">
                 <span>EXP: </span>
                 <CounterText max={stateUser.exp_user} duration={3} />
               </p>

@@ -48,7 +48,7 @@ const TableContent = ({ data }) => (
   <div className="flex flex-col max-h-[430px] overflow-y-auto font-mono font-semibold">
     {data.map((item, id) => (
       item.rank === "Senior" ? (
-        <div className="flex gap-[2%] items-center py-4 px-2 border-y border-slate-700 border-opacity-30 bg-red-500  bg-opacity-50 text-white hover:bg-slate-500 text-xs" key={id}>
+        <div className="flex gap-[2%] items-center py-4 px-2 border-y border-slate-700 border-opacity-30 bg-red-500  bg-opacity-50 text-white hover:bg-slate-500 duration-500 text-xs" key={id}>
           <div className="w-[10%] flex items-center justify-center">
             <p className="text-xs hover:opacity-100 opacity-45 flex items-center gap-4 ">{id >= 3 ? id + 1 : <GiImperialCrown />}</p>
           </div>
