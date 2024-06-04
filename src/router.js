@@ -54,6 +54,10 @@ const router = createBrowserRouter([
         path: "/dashboard/inventory",
         element: <PrivateRoute />, // Use PrivateRoute here
       },
+      {
+        path: "/dashboard/events",
+        element: <PrivateRoute />, // Use PrivateRoute here
+      },
     ],
   },
   {

@@ -15,7 +15,7 @@ const EventCard = () => {
 
                 <p className='py-5 text-sm text-opacity-75 text-slate-300'>Каждую неделю сделав фигма макет используя HTML CSS JS, получайте MMC коины! (JS не обьязательно!)</p>
 
-                <Link to='/dashboard/FigmaEvent' className='py-2 px-4 rounded-lg  max-w-[35%] text-sm flex items-center justify-center bg-amber-400  text-white' >Участвовать</Link>
+                <Link to='/dashboard/events' className='py-2 px-4 rounded-lg  max-w-[35%] text-sm flex items-center justify-center bg-amber-400  text-white' >Участвовать</Link>
             </div>
         </div>
     )

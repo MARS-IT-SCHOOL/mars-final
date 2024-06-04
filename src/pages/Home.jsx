@@ -52,7 +52,7 @@ const Home = () => {
   }, [theme]);
 
   console.log("USERS REQUEST:", users);
-
+  console.log('djcown');
   return (
     <main className="w-full flex gap-10 p-5 h-[97vh] glass shadow-lg rounded-2xl overflow-y-auto">
       <div className="flex flex-col flex-auto w-3/6">
