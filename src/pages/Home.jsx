@@ -6,7 +6,7 @@ import EventCard from "../components/EventCard/EventCard";
 import RatingTable from "../components/RatingTable/RatingTable";
 
 const Home = () => {
-  const theme = useSelector((state) => state.theme.theme); // Изменено для правильного доступа к теме
+  const theme = useSelector((state) => state.theme.theme); // Corrected theme selector
   const stateUser = useSelector((state) => state.auth);
 
   const allianceAPI = "https://marsgame.uz/student/leaderboard/alliance/";
@@ -45,14 +45,13 @@ const Home = () => {
     }
 
     fetchData();
-  }, [allianceAPI, usersAPI]);
+  }, [usersAPI]);
 
-  // Устанавливаем тему на основании состояния theme в Redux
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  console.log("USERS REQUEST:", users)
+  console.log("USERS REQUEST:", users);
 
   return (
     <main className="w-full flex gap-10 p-5 h-[97vh] glass shadow-lg rounded-2xl overflow-y-auto">

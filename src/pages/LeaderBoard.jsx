@@ -6,7 +6,7 @@ import top1 from '../assets/images/top1.png';
 import top2 from '../assets/images/top2.png';
 import top3 from '../assets/images/top3.png';
 import LeaderboardTable from '../components/RatingTable/LeaderboardTable';
-
+import { applyTheme } from "../Utils/themeUtils";  // Adjust the path as needed
 
 const LeaderBoard = () => {
   const [users, setUsers] = useState([]);
@@ -15,10 +15,11 @@ const LeaderBoard = () => {
   const [selectFilter, setSelectFilter] = useState("all")
 
   const usersAPI = "https://marsgame.uz/student/leaderboard/users/";
-
   const navigate = useNavigate();
 
   useEffect(() => {
+    applyTheme();
+
     async function fetchData() {
       try {
         const usersRequest = await axios.get(usersAPI);

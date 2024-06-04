@@ -4,8 +4,9 @@ import { useSelector } from "react-redux";
 
 const gameData = [
   { id: 1, name: 'Mars Typing', description: 'Здесь можно писать быстро и без ошибок', link: "/typing", image: 'https://todaysparent.mblycdn.com/tp/resized/2021/07/767x431/fun-typing-games-for-kids-dance-mat-typing.jpg' },
-  { id: 2, name: 'Mars Explorer', description: 'Исследуйте поверхность Марса', link: "", image: '' },
-  { id: 3, name: 'Mars Builder', description: 'Стройте базы на Марсе', link: "", image: '' }
+  { id: 2, name: 'Mars Hangman', description: 'Угадывайте слова и забирайте очки', link: "/hangman", image: 'https://media.istockphoto.com/id/165812595/vector/hangman-chalk-board.jpg?s=612x612&w=0&k=20&c=ZqZqbHIRJkEADor5Jm_p3kx80hAIimijkUjvcIHMMPQ=' },
+  { id: 2, name: 'Mars Explorer', description: 'Исследуйте поверхность Марса', link: "", image: '' }
+  // { id: 3, name: 'Mars Builder', description: 'Стройте базы на Марсе', link: "", image: '' }
 ];
 
 const MarsGames = () => {

@@ -1,23 +1,21 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { BsCoin } from "react-icons/bs";
 import { MdOutlineSpeed } from "react-icons/md";
-import { FaGun } from "react-icons/fa6";
-import { FaUserGroup } from "react-icons/fa6";
+import { FaGun, FaUserGroup, FaRankingStar } from "react-icons/fa6";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { LuSwords } from "react-icons/lu";
-import { MdControlPoint } from "react-icons/md";
-import { FaRankingStar } from "react-icons/fa6";
-import { GrVulnerability } from "react-icons/gr";
-import { MdOutlineFlag } from "react-icons/md";
+import { MdControlPoint, MdOutlineFlag } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import CounterText from "../services/counterText/CounterText";
+import { GrVulnerability } from "react-icons/gr";
 
 const Statistics = ({ userData }) => {
   const dispatch = useDispatch();
   const stateUser = useSelector(state => state.auth.user);
+  const theme = useSelector(state => state.theme.theme);
 
   const getTextShadow = (rank) => {
     switch (rank) {
@@ -38,7 +36,12 @@ const Statistics = ({ userData }) => {
         default:
             return "";
     }
-};
+  };
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
   console.log("Statistics:", stateUser);
   let Front = "Front"
   console.log(userData);

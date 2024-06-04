@@ -15,6 +15,7 @@ import {
 import App from './App'; // Import the App component
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Typing from './components/Games/Typing/Typing'
+import Hangman from './components/Games/Hangman/Hangman';
 
 const router = createBrowserRouter([
   {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
   {
     path: "/typing",
     element: <Typing />,
+  },
+  {
+    path: "/hangman",
+    element: <Hangman />,
   },
   {
     path: "/sign-in",
