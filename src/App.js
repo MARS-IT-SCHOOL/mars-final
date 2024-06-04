@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { allUsersData } from './slices/usersRatingSlice';
+import { allUsersData } from './slices/usersRatingSlice'; // Import slice for users data (if needed)
 import Sidebar from './components/Sidebar/sidebar';
 import Home from './pages/Home.jsx';
 import MarsGames from './pages/MarsGames';
@@ -25,12 +25,11 @@ const App = () => {
   const isLoading = useSelector(state => state.data.loading || state.shop.loading || state.profileCard.loading);
   const stateUser = useSelector(state => state.auth);
   const currentTheme = useSelector(state => state.theme.theme); // Get current theme from Redux store
-  console.log(currentTheme, "current");
   const userData = stateUser.user;
   const isAuth = stateUser.isAuthenticated;
-  console.log(userData);
+
   useEffect(() => {
-    dispatch(allUsersData());
+    dispatch(allUsersData()); // Dispatch if needed
     dispatch(fetchShopData());
     dispatch(fetchProfileCardData());
 
@@ -66,7 +65,7 @@ const App = () => {
           <Route path='/dashboard/shop' element={<PrivateRoute isAuth={isAuth} component={Shop} />} />
           <Route path='/dashboard/inventory' element={<PrivateRoute isAuth={isAuth} component={Inventory} />} />
           <Route path='/dashboard/login' element={<Login />} />
-          <Route path="*" element={<Navigate to={isAuth ? "/dashboard/home" : "/dashboard/login"} />} />
+          <Route path="*" element={<Navigate to={isAuth ? "/dashboard/home" : "/sign-in"} />} />
         </Routes>
       </div>
     </div>

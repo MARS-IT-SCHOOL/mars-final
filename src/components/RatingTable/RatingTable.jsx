@@ -6,7 +6,7 @@ import Skeleton from '../Others/Skeleton/Skeleton';
 
 const RatingTable = ({ theme, users, alliance, selected, setSelected, headerVariants }) => {
   return (
-    <motion.div data-theme={theme} className="table w-full max-h-[550px]"
+    <motion.div data-theme={theme} className="table w-full rounded-2xl max-h-[550px]"
       initial="hidden"
       animate="visible"
     >

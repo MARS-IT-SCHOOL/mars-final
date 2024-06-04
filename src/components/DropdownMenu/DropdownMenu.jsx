@@ -1,5 +1,4 @@
-import "../../../src/index.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
@@ -30,8 +29,8 @@ export default function DropdownMenu({ nameUser }) {
     navigate('/sign-in'); // Navigate to the login page or any other appropriate page
   };
 
-  // Truncate nameUser if it exceeds 25 characters
-  const displayName = nameUser.length > 17 ? `${nameUser.slice(0, 14)}...` : nameUser;
+  // Truncate nameUser if it exists and has a length
+  const displayName = nameUser?.length ? (nameUser.length > 17 ? `${nameUser.slice(0, 14)}...` : nameUser) : "";
 
   return (
     <motion.div

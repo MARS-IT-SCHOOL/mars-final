@@ -1,79 +1,76 @@
 import { createBrowserRouter } from 'react-router-dom';
 import {
-    Alliance,
-    Home,
-    Inventory,
-    LeaderBoard,
-    LoginPage,
-    MarsGames,
-    Settings,
-    Statistics,
-    Shop,
-    NotFound,
-    RegistrationPage
-} from './pages/pagesImports';
-import App from './App';
-import Typing from './components/Games/Typing/Typing';
+  Alliance,
+  Home,
+  Inventory,
+  LeaderBoard,
+  LoginPage,
+  MarsGames,
+  Settings,
+  Statistics,
+  Shop,
+  NotFound,
+  RegistrationPage,
+} from './pages/pagesImports'; // Assuming your pages are imported here
+import App from './App'; // Import the App component
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Typing from './components/Games/Typing/Typing'
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <App />,
-        errorElement: <div>ERROR</div>,
+  {
+    path: "/",
+    element: <App />, // Wrap App component for access to state
+    errorElement: <div>ERROR</div>,
+    children: [
+      {
+        path: "/dashboard/home",
+        element: <PrivateRoute />, // Use PrivateRoute here
+      },
+      {
+        path: "/dashboard/games",
+        element: <PrivateRoute />, // Use PrivateRoute here
         children: [
-            {
-                path: "/dashboard/home",
-                element: <Home />,
-            },
-
-            {
-                path: "/dashboard/games",
-                element: <MarsGames />,
-                children: [
-
-                ]
-            },
-            {
-                path: "/dashboard/leaderboard",
-                element: <LeaderBoard />,
-            },
-            {
-                path: "/dashboard/settings",
-                element: <Settings />,
-            },
-            {
-                path: "/dashboard/shop",
-                element: <Shop />,
-            },
-            {
-                path: "/dashboard/statistics",
-                element: <Statistics />,
-            },
-            {
-                path: "/dashboard/inventory",
-                element: <Inventory />,
-            },
+          // ... children routes for games
         ],
-    },
-
-    {
-        path: "*",
-        element: <NotFound />,
-    },
-    {
-        path: "/typing",
-        element: <Typing />
-
-    },
-    {
-        path: "/sign-in",
-        element: <LoginPage />,
-    },
-    {
-        path: "/registration",
-        element: <RegistrationPage />,
-    },
+      },
+      {
+        path: "/dashboard/leaderboard",
+        element: <PrivateRoute />, // Use PrivateRoute here
+      },
+      {
+        path: "/dashboard/settings",
+        element: <PrivateRoute />, // Use PrivateRoute here
+      },
+      {
+        path: "/dashboard/shop",
+        element: <PrivateRoute />, // Use PrivateRoute here
+      },
+      {
+        path: "/dashboard/statistics",
+        element: <PrivateRoute />, // Use PrivateRoute here
+      },
+      {
+        path: "/dashboard/inventory",
+        element: <PrivateRoute />, // Use PrivateRoute here
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+  {
+    path: "/typing",
+    element: <Typing />,
+  },
+  {
+    path: "/sign-in",
+    element: <LoginPage />,
+  },
+  {
+    path: "/registration",
+    element: <RegistrationPage />,
+  },
 ]);
 
-
-export default router
+export default router;
