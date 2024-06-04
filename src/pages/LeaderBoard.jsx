@@ -6,19 +6,25 @@ import top1 from '../assets/images/top1.png';
 import top2 from '../assets/images/top2.png';
 import top3 from '../assets/images/top3.png';
 import LeaderboardTable from '../components/RatingTable/LeaderboardTable';
-import { applyTheme } from "../Utils/themeUtils";  // Adjust the path as needed
+import { useSelector } from 'react-redux';
+
+ // Adjust the path as needed
 
 const LeaderBoard = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
   const [topThree, setTopThree] = useState([]);
   const [selectFilter, setSelectFilter] = useState("all")
+  const theme = useSelector(state => state.theme.theme);
 
   const usersAPI = "https://marsgame.uz/student/leaderboard/users/";
   const navigate = useNavigate();
 
   useEffect(() => {
-    applyTheme();
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
 
     async function fetchData() {
       try {
