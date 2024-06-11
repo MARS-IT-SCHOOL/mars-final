@@ -10,61 +10,73 @@ import {
     Statistics,
     Shop,
     NotFound,
-    RegistrationPage
-} from './pages/pagesImports';
-import App from './App';
-import Typing from './components/Games/Typing/Typing';
+    RegistrationPage,
+} from './pages/pagesImports'; // Assuming your pages are imported here
+import App from './App'; // Import the App component
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Typing from './components/Games/Typing/Typing'
+import Hangman from './components/Games/Hangman/Hangman';
+import QuizDirection from './components/Games/Quiz/QuizDirection';
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
+        element: <App />, // Wrap App component for access to state
         errorElement: <div>ERROR</div>,
         children: [
             {
                 path: "/dashboard/home",
-                element: <Home />,
+                element: <PrivateRoute />, // Use PrivateRoute here
             },
-
             {
                 path: "/dashboard/games",
-                element: <MarsGames />,
+                element: <PrivateRoute />, // Use PrivateRoute here
                 children: [
-
-                ]
+                    // ... children routes for games
+                ],
             },
             {
                 path: "/dashboard/leaderboard",
-                element: <LeaderBoard />,
+                element: <PrivateRoute />, // Use PrivateRoute here
             },
             {
                 path: "/dashboard/settings",
-                element: <Settings />,
+                element: <PrivateRoute />, // Use PrivateRoute here
             },
             {
                 path: "/dashboard/shop",
-                element: <Shop />,
+                element: <PrivateRoute />, // Use PrivateRoute here
             },
             {
                 path: "/dashboard/statistics",
-                element: <Statistics />,
+                element: <PrivateRoute />, // Use PrivateRoute here
             },
             {
                 path: "/dashboard/inventory",
-                element: <Inventory />,
+                element: <PrivateRoute />, // Use PrivateRoute here
+            },
+            {
+                path: "/dashboard/events",
+                element: <PrivateRoute />, // Use PrivateRoute here
             },
         ],
     },
-
     {
         path: "*",
         element: <NotFound />,
     },
     {
-        path: "typing",
-        element: <Typing />
-
+        path: "/typing",
+        element: <Typing />,
     },
+    {
+        path: "/quiz",
+        element: <QuizDirection />
+    },
+    //   {
+    //     path: "/hangman",
+    //     element: <Hangman />,
+    //   },
     {
         path: "/sign-in",
         element: <LoginPage />,
@@ -75,5 +87,4 @@ const router = createBrowserRouter([
     },
 ]);
 
-
-export default router
+export default router;

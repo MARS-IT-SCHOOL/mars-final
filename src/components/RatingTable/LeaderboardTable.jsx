@@ -44,9 +44,9 @@ const LeaderboardTable = ({ data }) => {
                 <p> {item.username} </p>
                 <p></p>
               </div>
-              <div className='flex-1 '> <p> {item.rank} </p> </div>
-              <div className='flex-1 '> <p> {item.level} </p></div>
-              <div className='flex-1 '> <p> {item.exp_user} </p> </div>
+              <div className='flex-1 '><p> {item.rank} </p> </div>
+              <div className='flex-1 '><p> {item.level} </p></div>
+              <div className='flex-1 '><p> {item.exp_user} </p> </div>
             </div>
           ))}
         </SwiperSlide>
